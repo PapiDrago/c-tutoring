@@ -37,3 +37,9 @@ int main(void) {
 	return 0;
 
 }
+/*
+Note that when dividing two int values, the decimal part is discarded.
+On the other hand if at least one of the operand is a floating
+point value the decimal part is preserved.
+
+*/

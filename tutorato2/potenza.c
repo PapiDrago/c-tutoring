@@ -25,15 +25,30 @@ int main(void) {
 	int exp = 0;
 	char s[80];
 
-	printf("Inserisci la base, può essere un numero frazionario.\n");
-	fgets(s, sizeof(s), stdin);
-	a = atof(s);
-	printf("Hai inserito %f\n", a);
-	
-	printf("Inserisci l'esponente, deve essere un numero intero positivo.\n");
-	fgets(s, sizeof(s), stdin);
-	exp = atoi(s);
-	printf("Hai inserito %d\n", exp);
+	while(1) {
+		printf("Inserisci la base, può essere un numero frazionario.\n");
+		fgets(s, sizeof(s), stdin);
+		a = atof(s);
+		printf("Hai inserito %f\n", a);
+		while(1) {
+			printf("Inserisci l'esponente, deve essere un numero intero positivo.\n");
+			fgets(s, sizeof(s), stdin);
+			exp = atoi(s);
+			printf("Hai inserito %d\n", exp);
+			if(exp < 0) {
+				if (a == 0) {
+					printf("[POTENZA]\n");
+					printf("non calcolabile\n");
+					return 0;
+
+					//continue;
+				}
+				a = 1/a;
+				exp = -exp;
+			}
+			break;
+		}
+	}
 
 	double risultato = 1;
 	risultato = elevazione(risultato, a, exp);

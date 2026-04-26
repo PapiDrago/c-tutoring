@@ -71,7 +71,8 @@ int main(void) {
 	int n = 0;
 
 	printf("Inserisci il numero di elementi da memorizzare.\n");
-	leggiValori(&n, 1, 0, -NMAX); //Rendi generale leggi valori
+	leggiValori(&n, 1, 0, NMAX);
+	printf("n = %d\n", n);
 
 	int v[n]; 
 
@@ -81,7 +82,8 @@ int main(void) {
 	stampaVettore(v, n);
 
 	bubbleSort(v, n);
-	stampaVettore(v, n);
+	//printf("Vettore riordinato!\n");
+	//stampaVettore(v, n);
 
 	printf("[MINIMO]\n");
 	printf("%d\n", v[0]);
